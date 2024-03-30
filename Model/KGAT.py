@@ -95,6 +95,7 @@ class KGAT(object):
 
     def _build_inputs(self):
         # placeholder definition
+        tf.disable_v2_behavior()
         self.users = tf.placeholder(tf.int32, shape=(None,))
         self.pos_items = tf.placeholder(tf.int32, shape=(None,))
         self.neg_items = tf.placeholder(tf.int32, shape=(None,))
