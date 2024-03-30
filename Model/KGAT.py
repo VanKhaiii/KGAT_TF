@@ -98,23 +98,23 @@ class KGAT(object):
         #self._states = tf.placeholder(shape=[None, self._num_states], dtype=tf.float32)
         #self._states = tf.Variable(tf.ones(shape=[None, self._num_states]), dtype=tf.float32)
         
-        self.users = tf.Variable(tf.zeros(shape=(None,), dtype=tf.int32))
-        self.pos_items = tf.Variable(tf.zeros(shape=(None,), dtype=tf.int32))
-        self.neg_items = tf.Variable(tf.zeros(shape=(None,), dtype=tf.int32))
+        self.users = tf.Variable(tf.ones(shape=(None,), dtype=tf.int32))
+        self.pos_items = tf.Variable(tf.ones(shape=(None,), dtype=tf.int32))
+        self.neg_items = tf.Variable(tf.ones(shape=(None,), dtype=tf.int32))
 
 
         # for knowledge graph modeling (TransD)
-        self.A_values = tf.Variable(tf.zeros(shape=[len(self.all_v_list)], dtype=tf.float32), name='A_values')
+        self.A_values = tf.Variable(tf.ones(shape=[len(self.all_v_list)], dtype=tf.float32), name='A_values')
 
-        self.h = tf.Variable(tf.zeros(shape=(None,), dtype=tf.int32), name='h')
-        self.r = tf.Variable(tf.zeros(shape=(None,), dtype=tf.int32), name='r')
-        self.pos_t = tf.Variable(tf.zeros(shape=(None,), dtype=tf.int32), name='pos_t')
-        self.neg_t = tf.Variable(tf.zeros(shape=(None,), dtype=tf.int32), name='neg_t')
+        self.h = tf.Variable(tf.ones(shape=(None,), dtype=tf.int32), name='h')
+        self.r = tf.Variable(tf.ones(shape=(None,), dtype=tf.int32), name='r')
+        self.pos_t = tf.Variable(tf.ones(shape=(None,), dtype=tf.int32), name='pos_t')
+        self.neg_t = tf.Variable(tf.ones(shape=(None,), dtype=tf.int32), name='neg_t')
 
         # dropout: node dropout (adopted on the ego-networks);
         # message dropout (adopted on the convolution operations).
-        self.node_dropout = tf.Variable(tf.zeros(shape=(None,), dtype=tf.float32))
-        self.mess_dropout = tf.Variable(tf.zeros(shape=(None,), dtype=tf.float32))
+        self.node_dropout = tf.Variable(tf.ones(shape=(None,), dtype=tf.float32))
+        self.mess_dropout = tf.Variable(tf.ones(shape=(None,), dtype=tf.float32))
 
 
     def _build_weights(self):
